@@ -31,7 +31,7 @@ cursor.execute(drop_sql)
 create_table = ("CREATE TABLE Roster (Name NVARCHAR(100), Species NVARCHAR(100), Age INT)")
 cursor.execute(create_table)
 print("Roster table created.")
-##2.Populate your new table with the following values:
+##2. Populate your new table with the following values:
 insert_sql = """
     INSERT INTO Roster (Name, Species, Age) VALUES  
     ('Benjamin Sisko', 'Human', 40), 
@@ -39,7 +39,7 @@ insert_sql = """
     ('Kira Nerys', 'Bajoran', 29)
 """
 cursor.execute(insert_sql)
-##3.Update the Name of Jadzia Dax to be Ezri Dax
+##3. Update the Name of Jadzia Dax to be Ezri Dax
 update_sql = """
     UPDATE Roster 
     SET Name = 'Ezri Dax'
@@ -48,7 +48,7 @@ cursor.execute(update_sql)
 conn.commit()
 print("Name updated✅")
 
-##4.Display the Name and Age of everyone in the table classified as Bajoran.
+##4. Display the Name and Age of everyone in the table classified as Bajoran.
 select_sql = "SELECT Name, Age FROM Roster WHERE Species = 'Bajoran'"
 cursor.execute(select_sql)
 rows = cursor.fetchall()
